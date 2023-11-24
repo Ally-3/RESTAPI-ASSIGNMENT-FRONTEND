@@ -1,4 +1,75 @@
-.App {
-  text-align: center;
+* {
+  color: #FF928B;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  background-color: #baddaa;
+  margin: 0;
+  padding: 0;
 }
 
+.App {
+  text-align: center;
+  background-color: #baddaa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  margin: 20px;
+  background-color: #EFE9AE;
+  color: #ffffff;
+  text-align: center;
+  z-index: auto;
+}
+
+h2 {
+  color: black;
+  line-height: 75px;
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+h3 {
+  color: black;
+  font-weight:100;
+  padding-bottom: 10px;
+}
+
+p {
+  color:rgb(139, 221, 241);
+  line-height: 100px;
+  font-weight: bolder;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+h2, h3, label, form, p {
+  background-color: #EFE9AE;
+}
+
+.emailbox, .passwordbox {
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: rgb(148, 226, 246);
+  color:black;
+  border: none;
+  border-radius: 5px;
+}
+
+
+input[type="submit"], button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #FEC3AC;
+  color:black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

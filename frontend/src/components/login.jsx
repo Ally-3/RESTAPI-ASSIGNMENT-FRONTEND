@@ -1,11 +1,11 @@
 import { writeCookie } from "../utils/utilities";
 
-function Register(props) {
+function Login(props) {
 
-    async function sendRegisterToBackend(email, password, setLoggedIn) {
+    async function sendLogin(email, password, setLoggedIn) {
         try {
             const response = await fetch(
-                "http://localhost:5001/registerUser",
+                "http://localhost:5001/loginUser",
                 {
                     method : "POST",
                     headers : {"Content-Type" : "application/json"},
@@ -19,7 +19,6 @@ function Register(props) {
             console.log(data.token);
             writeCookie("jwt_token",data.token,7);
             setLoggedIn(true);
-
         } catch (error) {
             console.log(error)
         }
@@ -27,12 +26,12 @@ function Register(props) {
 
     function handleSubmit(event) {
         event.preventDefault(); //stop reseting screen
-        sendRegisterToBackend(props.email, props.password, props.setLoggedIn)
+        sendLogin(props.email, props.password, props.setLoggedIn);
     }
 
     return (
         <div className="box">
-            <h2>Register User</h2>
+            <h2>Login User</h2>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="email">Enter your email</label> 
                 <input 
@@ -43,7 +42,7 @@ function Register(props) {
                     onChange = {(event) => props.setEmail(event.target.value)}
                 />
                 <br />
-                <label htmlFor="password">Enter a password</label>
+                <label htmlFor="password">Enter your password</label>
                 <input 
                     className="passwordbox" 
                     type="text" 
@@ -58,4 +57,4 @@ function Register(props) {
     )
 };
 
-export default Register;
+export default Login;
